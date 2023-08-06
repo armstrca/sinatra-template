@@ -12,6 +12,11 @@ configure :development do
 
   # appdev support patches
   require "appdev_support"
+  
+  configure do
+    # setup a database connection
+    set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
+  end
 
   AppdevSupport.config do |config|
     # config.action_dispatch = true;
